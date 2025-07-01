@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reinvestar</title>
+  </head>
+  <body style="font-family: Arial, sans-serif; margin: 0; padding: 0">
+    <table cellpadding="0" cellspacing="0" border="0" style="width: 100%">
+      <tr>
+        <td align="center">
+          <!-- Contenedor principal -->
+          <table
+            cellpadding="0"
+            cellspacing="0"
+            border="0"
+            style="width: 1000px; max-width: 100%; font-size: 11px"
+          >
+            <!-- Header -->
+            <tr>
+              <td style="padding-right: 20px; width: 40%">
+                <img
+                  src="./assets/logo.png"
+                  alt="REINVESTAR Capital Group"
+                  style="width: 100%; max-width: 300px"
+                />
+              </td>
+              <td
+                style="
+                  background-color: #ffc55a;
+                  padding: 10px;
+                  border: 1px solid #000;
+                "
+              >
+                <table
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                  style="width: 100%"
+                >
+                  <tr>
+                    <td>
+                      <span id="advisorFullName"></span> (<span id="advisorId"></span>)<br>
+                      <span id="advisorPhone"></span><br>
+                      <a id="advisorEmail" href="#" style="color: #000; text-decoration: none"></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="https://www.reinvestarcapitalgroup.com"
+                        style="color: #000; text-decoration: none"
+                        >WWW.REINVESTARCAPITALGROUP.COM</a
+                      >
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Espaciado -->
+            <tr>
+              <td colspan="2" style="height: 30px"></td>
+            </tr>
+
+            <!-- Título -->
+            <tr>
+              <td
+                colspan="2"
+                style="
+                  background-color: #ffc55a;
+                  text-align: center;
+                  font-weight: bold;
+                  font-size: 12px;
+                  padding: 12px;
+                  border: 1px solid #000;
+                "
+              >
+                LETTER OF INTENT FOR SHORT TERM LOAN
+              </td>
+            </tr>
+
+            <!-- Espaciado -->
+            <tr>
+              <td colspan="2" style="height: 25px"></td>
+            </tr>
+
+            <!-- Contenido Principal -->
+            <tr>
+              <!-- Columna izquierda -->
+              <td style="vertical-align: top; width: 50%; padding-right: 10px">
+                <!-- Borrower Info -->
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">BORROWER INFORMATION</td>
+                  </tr>
+                  <tr>
+                    <td>BORROWER INFORMATION</td>
+                    <td><span id="borrowerName"></span></td>
+                  </tr>
+                  <tr>
+                    <td>LEGAL STATUS</td>
+                    <td><span id="legalStatus"></span></td>
+                  </tr>
+                  <tr>
+                    <td>ISSUED DATE</td>
+                    <td><span id="issuedDate"></span></td>
+                  </tr>
+                  <tr>
+                    <td>SUBJECT PROPERTY ADDRESS</td>
+                    <td><span id="propertyAddress"></span></td>
+                  </tr>
+                  <tr>
+                    <td>ESTIMATED FICO SCORE</td>
+                    <td><span id="ficoScore"></span></td>
+                  </tr>
+                </table>
+
+                <!-- Espacio -->
+                <div style="height: 20px"></div>
+
+                <!-- Loan Details -->
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">LOAN DETAILS</td>
+                  </tr>
+                  <tr>
+                    <td>LOAN TYPE</td>
+                    <td><span id="loanType"></span></td>
+                  </tr>
+                  <tr>
+                    <td>PROPERTY TYPE</td>
+                    <td><span id="propertyType"></span></td>
+                  </tr>
+                  <tr>
+                    <td>ESTIMATED CLOSING DATE</td>
+                    <td><span id="closingDate"></span></td>
+                  </tr>
+                  <tr>
+                    <td>INTEREST RATE STRUCTURE</td>
+                    <td><span id="interestStructure"></span></td>
+                  </tr>
+                  <tr>
+                    <td>LOAN TERM</td>
+                    <td><span id="loanTerm"></span> months</td>
+                  </tr>
+                  <tr>
+                    <td>PREPAYMENT PENALTY</td>
+                    <td><span id="prepaymentPenalty"></span></td>
+                  </tr>
+                  <tr>
+                    <td>MAXIMUM LTV</td>
+                    <td><span id="maxLTV"></span>%</td>
+                  </tr>
+                  <tr>
+                    <td>MAXIMUM LTC</td>
+                    <td><span id="maxLTC"></span>%</td>
+                  </tr>
+                </table>
+                <!-- Espacio -->
+                <div style="height: 20px"></div>
+
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">TRANSACTION SUMMARY</td>
+                  </tr>
+                </table>
+
+                <!-- Espacio -->
+                <div style="height: 20px"></div>
+
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">PURCHASE, REFINANCE, CASH-OUT</td>
+                  </tr>
+                  <tr>
+                    <td>As-is Value</td>
+                    <td><span id="asIsValue"></span></td>
+                  </tr>
+                  <tr>
+                    <td>Original Acquisition Price</td>
+                    <td><span id="acquisitionPrice"></span></td>
+                  </tr>
+                </table>
+
+                <!-- Espacio -->
+                <div style="height: 20px"></div>
+
+                <!-- FIX & FLIP, GROUND UP CONSTRUCTION -->
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">FIX & FLIP, GROUND UP CONSTRUCTION</td>
+                  </tr>
+                  <tr>
+                    <td>Land or Acquisition Cost</td>
+                    <td>$<span id="landCost"></span></td>
+                  </tr>
+                  <tr>
+                    <td>Financed Construction / Rehab Budget</td>
+                    <td>$<span id="constructionBudget"></span></td>
+                  </tr>
+                  <tr>
+                    <td>Total Cost</td>
+                    <td>$<span id="totalCost"></span></td>
+                  </tr>
+                  <tr>
+                    <td>Estimated After Completion Value</td>
+                    <td>$<span id="afterCompletionValue"></span></td>
+                  </tr>
+                </table>
+
+                <!-- Espacio -->
+                <div style="height: 20px"></div>
+
+                <!-- LOAN CLOSING COSTS -->
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">LOAN CLOSING COSTS</td>
+                  </tr>
+                  <tr>
+                    <td>Fee</td>
+                    <td><span id="feePercent"></span>%</td>
+                  </tr>
+                  <tr>
+                    <td>Origination Fee</td>
+                    <td>$<span id="originationFee"></span></td>
+                  </tr>
+                  <tr>
+                    <td>Underwriting Fee</td>
+                    <td>$<span id="underwritingFee"></span></td>
+                  </tr>
+                  <tr>
+                    <td>Processing Fee</td>
+                    <td>$<span id="processingFee"></span></td>
+                  </tr>
+                  <tr>
+                    <td>Servicing Fee</td>
+                    <td>$<span id="servicingFee"></span></td>
+                  </tr>
+                  <tr>
+                    <td>Legal Fee</td>
+                    <td>$<span id="legalFee"></span></td>
+                  </tr>
+                  <tr>
+                    <td>Appraisal Fee</td>
+                    <td><span id="appraisalFee"></span></td>
+                  </tr>
+                  <tr>
+                    <td>Budget review and Permit Validation report</td>
+                    <td>$<span id="budgetReview"></span></td>
+                  </tr>
+                </table>
+
+                <!-- Espacio -->
+                <div style="height: 20px"></div>
+
+                <!-- OTHER EXPENSES (Estimated)	 -->
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">OTHER EXPENSES (Estimated)</td>
+                  </tr>
+                  <tr>
+                    <td>Fee</td>
+                    <td><span id="brokerFeePercent"></span>%</td>
+                  </tr>
+                  <tr>
+                    <td>Broker Fee</td>
+                    <td>$<span id="brokerFee"></span></td>
+                  </tr>
+                  <tr>
+                    <td>Transaction Fee</td>
+                    <td>$<span id="transactionFee"></span></td>
+                  </tr>
+                </table>
+
+                <!-- Espacio -->
+                <div style="height: 20px"></div>
+
+                <!-- OTHER EXPENSES (Estimated)	 -->
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #000;
+                      font-weight: bold;
+                      text-align: start;
+                    "
+                  >
+                    <td style="color: #fff; width: 70%">
+                      All terms subject to confirmation including but
+                    </td>
+                  </tr>
+                  <!-- Espaciado -->
+                  <tr>
+                    <td style="height: 20px"></td>
+                    <td style="height: 20px"></td>
+                  </tr>
+                  <tr>
+                    <td style="height: 20px"></td>
+                    <td style="height: 20px"></td>
+                  </tr>
+                  <tr>
+                    <td style="height: 20px"></td>
+                    <td style="height: 20px"></td>
+                  </tr>
+                </table>
+
+                <!-- Espacio -->
+                <div style="height: 20px"></div>
+
+                <!-- OTHER EXPENSES (Estimated)	 -->
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="0"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <!-- <tr style="background-color: #ffc55a; font-weight: bold; text-align: center;">
+                  <td colspan="2">OTHER EXPENSES (Estimated)</td>
+                </tr> -->
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td>BORROWER SIGNATURE:</td>
+                    <td><span id="borrowerSignature"></span></td>
+                  </tr>
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td>BORROWER NAME:</td>
+                    <td><span id="borrowerNameSignature"></span></td>
+                  </tr>
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td>ENTITY NAME:</td>
+                    <td><span id="entityName"></span></td>
+                  </tr>
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td>DATE:</td>
+                    <td><span id="date"></span></td>
+                  </tr>
+                </table>
+              </td>
+
+              <!-- Columna derecha -->
+              <td style="vertical-align: top; width: 50%; padding-left: 10px">
+                <!-- Loan Summary -->
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">LOAN SUMMARY</td>
+                  </tr>
+                  <tr>
+                    <td>TOTAL LOAN AMOUNT</td>
+                    <td>$<span id="totalLoanAmount"></span></td>
+                  </tr>
+                  <tr>
+                    <td>ANNUAL INTEREST RATE</td>
+                    <td><span id="interestRate"></span>%</td>
+                  </tr>
+                  <tr>
+                    <td>REQUESTED LEVERAGE</td>
+                    <td><span id="requestedLeverage"></span>%</td>
+                  </tr>
+                  <tr>
+                    <td>APPROX. MONTHLY INTEREST PAYMENT</td>
+                    <td>$<span id="monthlyInterest"></span></td>
+                  </tr>
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">
+                      IF LOAN IS FIX & FLIP OR GROUND UP CONSTRUCTION
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>CONSTRUCTION HOLDBACK</td>
+                    <td>$<span id="constructionHoldback"></span></td>
+                  </tr>
+                  <tr>
+                    <td>INITIAL FUNDING</td>
+                    <td>$<span id="initialFunding"></span></td>
+                  </tr>
+                  <tr>
+                    <td>DAY 1 APPROX. MONTHLY INTEREST PAYMENT</td>
+                    <td>$<span id="day1Interest"></span></td>
+                  </tr>
+                </table>
+                <!-- Espacio -->
+                <div style="height: 15px"></div>
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">LOAN METRICS</td>
+                  </tr>
+                </table>
+                <!-- Espacio -->
+                <div style="height: 15px"></div>
+
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">PURCHASE, REFINANCE, CASH-OUT</td>
+                  </tr>
+                  <tr>
+                    <td>Loan to As-is Value (LTV)</td>
+                    <td><span id="loanToAsValueLTV"></span></td>
+                  </tr>
+                  <tr>
+                    <td style="height: 10px"></td>
+                    <td style="height: 10px"></td>
+                  </tr>
+                </table>
+                <!-- Espacio -->
+                <div style="height: 15px"></div>
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">FIX & FLIP, GROUND UP CONSTRUCTION</td>
+                  </tr>
+                  <tr>
+                    <td>Loan to As-Is Value (LTAIV) %</td>
+                    <td><span id="ltaivPercent"></span>%</td>
+                  </tr>
+                  <tr>
+                    <td>Loan to As-Is Value (LTAIV) $</td>
+                    <td>$<span id="ltaivAmount"></span></td>
+                  </tr>
+                  <tr>
+                    <td>Loan to Cost (LTC) %</td>
+                    <td><span id="ltcPercent"></span>%</td>
+                  </tr>
+                  <tr>
+                    <td>Loan to Cost (LTC) $</td>
+                    <td>$<span id="ltcAmount"></span></td>
+                  </tr>
+                  <tr>
+                    <td>Loan to ARV (Maximum 75%) %</td>
+                    <td><span id="larvPercent"></span>%</td>
+                  </tr>
+                  <tr>
+                    <td>Loan to ARV (Maximum 75%) $</td>
+                    <td>$<span id="larvAmount"></span></td>
+                  </tr>
+                  <tr>
+                    <td>Rehab Category</td>
+                    <td><span id="rehabCategory"></span></td>
+                  </tr>
+                </table>
+
+                <!-- Espacio -->
+                <div style="height: 15px"></div>
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">CONDITIONS AND ADDITIONAL INFORMATION</td>
+                  </tr>
+                  <tr style="font-weight: normal; text-align: center">
+                    <td colspan="2">FOR SHORT TERM LOANS:</td>
+                  </tr>
+                  <tr>
+                    <td>1) Minimum Credit Score required</td>
+                    <td><span id="minCreditScore"></span></td>
+                  </tr>
+                  <tr>
+                    <td>2) Commitment deposit</td>
+                    <td>$<span id="commitmentDeposit"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      (required to initiate loan processing and order of
+                      appraisal)
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr style="text-align: start; height: 30px">
+                    <td colspan="2">
+                      <span style="font-weight: 800">If Loan doesn't close</span
+                      >, a statement of expenses will be produced, and only the
+                      remaining balance will be returned.
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Espacio -->
+                <div style="height: 15px"></div>
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">
+                      MINIMUM BORROWER'S LIQUIDITY REQUIRED (Estimated)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Cash to close (Down payment + closing costs)</td>
+                    <td><span id="cashToClose"></span></td>
+                  </tr>
+                  <tr>
+                    <td>10% of Construction Budget</td>
+                    <td>$<span id="constructionBudgetPercent"></span></td>
+                  </tr>
+                  <tr>
+                    <td>6 months payment reserves</td>
+                    <td>$<span id="paymentReserves"></span></td>
+                  </tr>
+                  <tr>
+                    <td>Construction budget delta</td>
+                    <td>$<span id="budgetDelta"></span></td>
+                  </tr>
+                  <tr>
+                    <td>Total</td>
+                    <td>$<span id="totalLiquidity"></span></td>
+                  </tr>
+                </table>
+
+                <div style="height: 285px"></div>
+                <!-- <table cellpadding="5" cellspacing="0" border="1" style="width: 100%; border-collapse: collapse;">
+                <tr style="background-color: #ffc55a; font-weight: bold; text-align: center;">
+                  <td>btn1</td>
+                  <td>btn2</td>
+                  <td>btn3</td>
+                </tr>
+              </table>          -->
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="0"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <!-- <tr style="background-color: #ffc55a; font-weight: bold; text-align: center;">
+                  <td colspan="2">OTHER EXPENSES (Estimated)</td>
+                </tr> -->
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td>GUARANTOR SIGNATURE:</td>
+                    <td><span id="guarantorSignature"></span></td>
+                  </tr>
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td>GUARANTOR NAME:</td>
+                    <td><span id="guarantorName"></span></td>
+                  </tr>
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td>DATE:</td>
+                    <td><span id="guarantorDate"></span></td>
+                  </tr>
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- Título -->
+            <tr>
+              <td colspan="2" style="height: 25px"></td>
+            </tr>
+
+            <tr>
+              <td
+                colspan="2"
+                style="
+                  background-color: #000;
+                  text-align: center;
+                  font-weight: bold;
+                  font-size: 12px;
+                  padding: 12px;
+                  border: 1px solid #000;
+                "
+              >
+                <p style="color: #fff; margin: 0">
+                  "PLEASE EXECUTE THIS LETTER OF INTENT AND RETURN TO REINVESTAR
+                  CAPITAL GROUP SHOULD YOU WISH TO PROCEED Offer will expire
+                  within five (5) business days of the issued date."
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <div style="text-align: center; margin: 20px">
+      <button onclick="window.print()" style="background-color: #ffc55a; border: 1px solid #000; padding: 10px 20px; font-weight: bold; cursor: pointer;">Imprimir</button>
+    </div>
+    <script>
+      window.onload = function() {
+        // Data de prueba
+        const testData = {
+    "borrowerName": "Joseph Enrique Villalba Osorio",
+    "legalStatus": "CITIZEN",
+    "issuedDate": "2025-06-26",
+    "propertyAddress": "Calle 72 # 46 - 89",
+    "ficoScore": 45603,
+    "loanType": "Ground Up Construction",
+    "propertyType": "Single Family",
+    "closingDate": "2025-06-27",
+    "interestStructure": "Interest Only",
+    "loanTerm": 50,
+    "prepaymentPenalty": "Not Applicable",
+    "maxLTV": 57,
+    "maxLTC": 67,
+    "asIsValue": 899,
+    "acquisitionPrice": 899,
+    "landCost": 4500,
+    "constructionBudget": 5000,
+    "totalCost": 5643,
+    "afterCompletionValue": 8939,
+    "feePercent": 778,
+    "originationFee": 8930,
+    "underwritingFee": 4738,
+    "processingFee": 7000,
+    "servicingFee": 8280,
+    "legalFee": 8990,
+    "appraisalFee": "TBD",
+    "budgetReview": 7383,
+    "brokerFeePercent": 18,
+    "brokerFee": 43939,
+    "transactionFee": 89399,
+    "totalLoanAmount": 8939,
+    "interestRate": 9,
+    "requestedLeverage": 84848,
+    "monthlyInterest": 8483,
+    "constructionHoldback": 88830,
+    "initialFunding": 94949,
+    "day1Interest": 94949,
+    "ltaivPercent": 8,
+    "ltaivAmount": 4848,
+    "ltcPercent": 9,
+    "ltcAmount": 5600,
+    "larvPercent": 95,
+    "larvAmount": 5594,
+    "rehabCategory": "Ground Up",
+    "loanToAsValueLTV": "NOT APPLICABLE",
+    "minCreditScore": 5000,
+    "commitmentDeposit": 69594,
+    "cashToClose": 39200,
+    "constructionBudgetPercent": 68484,
+    "paymentReserves": 1200,
+    "budgetDelta": 5632,
+    "totalLiquidity": 2300,
+    "borrowerSignature": "Signed",
+    "borrowerNameSignature": "",
+    "entityName": "",
+    "date": "2025-06-26",
+    "guarantorSignature": "Signed",
+    "guarantorName": "",
+    "guarantorDate": "2025-06-26",
+    "advisorId": "2",
+    "advisorFullName": "Oscar Jr. Ladino",
+    "advisorEmail": "oljr@reinvestarcg.com",
+    "advisorPhone": "1 (201) 560-6938"
+}
+
+        Object.keys(testData).forEach(key => {
+          const el = document.getElementById(key);
+          if (el) {
+            el.textContent = testData[key];
+          }
+        });
+      };
+    </script>
+  </body>
+</html>

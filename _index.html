@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loan Intent Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      padding: 2rem;
+    }
+
+    .excel-form {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      max-width: 900px;
+      background: white;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    .excel-form label {
+      padding: 10px;
+      background-color: #eaeaea;
+      border-bottom: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+    }
+
+    .excel-form input, .excel-form select {
+      padding: 10px;
+      border: none;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .section-title {
+      grid-column: span 2;
+      background: #cfcfcf;
+      padding: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-bottom: 2px solid #999;
+    }
+
+    .output {
+      background-color: #f3f3f3;
+    }
+
+    .center {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <form class="excel-form" id="loanForm">
+    <div class="section-title">Borrower Information</div>
+    <label for="name">Borrower Name</label>
+    <input type="text" id="name" required>
+
+    <label for="legalStatus">Legal Status</label>
+    <select id="legalStatus">
+      <option>CITIZEN</option>
+      <option>RESIDENT</option>
+      <option>FOREIGN NATIONAL</option>
+    </select>
+
+    <label for="issuedDate">Issued Date</label>
+    <input type="date" id="issuedDate">
+
+    <label for="propertyAddress">Property Address</label>
+    <input type="text" id="propertyAddress">
+
+    <label for="fico">Estimated FICO Score</label>
+    <input type="number" id="fico" min="300" max="850">
+
+    <div class="section-title">Loan Details</div>
+
+    <label for="loanType">Loan Type</label>
+    <input type="text" id="loanType" value="Ground Up Construction">
+
+    <label for="propertyType">Property Type</label>
+    <input type="text" id="propertyType" value="Single Family">
+
+    <label for="closingDate">Estimated Closing Date</label>
+    <input type="date" id="closingDate">
+
+    <label for="interestStructure">Interest Rate Structure</label>
+    <input type="text" id="interestStructure" value="Interest Only">
+
+    <label for="loanTerm">Loan Term</label>
+    <input type="text" id="loanTerm" value="18 months">
+
+    <label for="prepaymentPenalty">Prepayment Penalty</label>
+    <input type="text" id="prepaymentPenalty" value="Not Applicable">
+
+    <label for="ltv">Maximum LTV</label>
+    <input type="number" step="0.01" id="ltv" value="0.75">
+
+    <label for="ltc">Maximum LTC</label>
+    <input type="number" step="0.01" id="ltc" value="0.9">
+
+    <div class="section-title">Loan Summary</div>
+
+    <label for="loanAmount">Total Loan Amount</label>
+    <input type="number" id="loanAmount" value="272000">
+
+    <label for="interestRate">Annual Interest Rate</label>
+    <input type="number" step="0.01" id="interestRate" value="0.10">
+
+    <label for="leverage">Requested Leverage</label>
+    <input type="number" step="0.01" id="leverage" value="0.85">
+
+    <label>Approx. Monthly Interest Payment</label>
+    <input type="text" id="monthlyInterest" class="output" readonly>
+
+    <label for="holdback">Construction Holdback</label>
+    <input type="number" id="holdback" value="251000">
+
+    <label>Initial Funding (w/o holdback)</label>
+    <input type="text" id="initialFunding" class="output" readonly>
+
+    <label>Day 1 Approx. Monthly Interest Payment</label>
+    <input type="text" id="day1Interest" class="output" readonly>
+  </form>
+
+  <script>
+    const loanAmountInput = document.getElementById('loanAmount');
+    const interestRateInput = document.getElementById('interestRate');
+    const holdbackInput = document.getElementById('holdback');
+
+    const monthlyInterest = document.getElementById('monthlyInterest');
+    const initialFunding = document.getElementById('initialFunding');
+    const day1Interest = document.getElementById('day1Interest');
+
+    function calculate() {
+      const loan = parseFloat(loanAmountInput.value) || 0;
+      const rate = parseFloat(interestRateInput.value) || 0;
+      const holdback = parseFloat(holdbackInput.value) || 0;
+
+      const monthly = (loan * rate) / 12;
+      const initFunding = loan - holdback;
+      const firstDay = (initFunding * rate) / 12;
+
+      monthlyInterest.value = monthly.toFixed(2);
+      initialFunding.value = initFunding.toFixed(2);
+      day1Interest.value = firstDay.toFixed(2);
+    }
+
+    document.querySelectorAll('#loanAmount, #interestRate, #holdback').forEach(el => {
+      el.addEventListener('input', calculate);
+    });
+
+    window.onload = calculate;
+  </script>
+
+</body>
+</html>

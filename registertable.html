@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrower Data</title>
+    <style>
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: sans-serif;
+            min-width: 2000px; /* Ancho mínimo para acomodar todas las columnas */
+        }
+
+        th,
+        td {
+            border: 1px solid #999;
+            padding: 6px 8px;
+            text-align: center;
+            font-size: 11px;
+            white-space: nowrap;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        
+        .header-cell {
+            background-color: #ffc55a;
+            font-weight: bold;
+        }
+        
+        .export-button {
+            background-color: #ffc55a;
+            border: 1px solid #000;
+            padding: 10px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .export-button:hover {
+            background-color: #e6b84d;
+        }
+        
+        .controls-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .filter-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .volver-btn {
+            display: inline-block;
+            background-color: #ffc55a;
+            color: #222;
+            border: 1px solid #000;
+            border-radius: 5px;
+            padding: 8px 22px;
+            font-size: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 18px 0 0 18px;
+            box-shadow: 1px 1px 4px #eee;
+            transition: background 0.2s, color 0.2s;
+        }
+        .volver-btn:hover {
+            background-color: #e6b84d;
+            color: #000;
+        }
+    </style>
+
+</head>
+
+<body style="margin: 0;">
+    <header style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffc55a;
+            ">
+        <h2>Registers</h2>
+
+    </header>
+    <a href="index.html" class="volver-btn">Volver</a>
+    <div style="margin: 2rem;">
+        <h1>Register Table</h1>
+        
+        <div class="controls-container">
+            <div class="filter-section">
+                <label for="advisorFilter">Filtrar por asesor:</label>
+                <select id="advisorFilter">
+                    <option value="">Todos los asesores</option>
+                    <option value="2">Oscar Jr. Ladino</option>
+                    <option value="3">Carlos Hernandez</option>
+                    <option value="4">Felipe Delgado</option>
+                    <option value="5">Pedro Conesa</option>
+                    <option value="6">Mohamed Heldosougi</option>
+                    <option value="7">Simone Costa</option>
+                    <option value="8">Carlos Díaz</option>
+                    <option value="9">Lilibhet Fuentes</option>
+                    <option value="10">Andriup Cohen</option>
+                    <option value="11">Stephanie Cruz</option>
+                    <option value="12">George Dillon</option>
+                    <option value="13">Andres Uribe</option>
+                    <option value="14">Viviana Puerta</option>
+                    <option value="15">Mariana Osorio</option>
+                    <option value="16">Carlos Betancourt</option>
+                    <option value="17">Julio Lopez</option>
+                    <option value="18">Jaime Arias</option>
+                    <option value="19">Paula Botero</option>
+                </select>
+            </div>
+            
+            <button class="export-button" onclick="exportarExcel()">Exportar como Excel</button>
+        </div>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="header-cell">Issued Date</th>
+                        <th class="header-cell">Borrower Name</th>
+                        <th class="header-cell">Legal Status</th>
+                        <th class="header-cell">Property Address</th>
+                        <th class="header-cell">FICO Score</th>
+                        <th class="header-cell">Loan Type</th>
+                        <th class="header-cell">Property Type</th>
+                        <th class="header-cell">Closing Date</th>
+                        <th class="header-cell">Interest Structure</th>
+                        <th class="header-cell">Loan Term</th>
+                        <th class="header-cell">Prepayment Penalty</th>
+                        <th class="header-cell">Max LTV</th>
+                        <th class="header-cell">Max LTC</th>
+                        <th class="header-cell">As-is Value</th>
+                        <th class="header-cell">Acquisition Price</th>
+                        <th class="header-cell">Land Cost</th>
+                        <th class="header-cell">Construction Budget</th>
+                        <th class="header-cell">Total Cost</th>
+                        <th class="header-cell">After Completion Value</th>
+                        <th class="header-cell">Fee Percent</th>
+                        <th class="header-cell">Origination Fee</th>
+                        <th class="header-cell">Underwriting Fee</th>
+                        <th class="header-cell">Processing Fee</th>
+                        <th class="header-cell">Servicing Fee</th>
+                        <th class="header-cell">Legal Fee</th>
+                        <th class="header-cell">Appraisal Fee</th>
+                        <th class="header-cell">Budget Review</th>
+                        <th class="header-cell">Broker Fee Percent</th>
+                        <th class="header-cell">Broker Fee</th>
+                        <th class="header-cell">Transaction Fee</th>
+                        <th class="header-cell">Total Loan Amount</th>
+                        <th class="header-cell">Interest Rate</th>
+                        <th class="header-cell">Requested Leverage</th>
+                        <th class="header-cell">Monthly Interest</th>
+                        <th class="header-cell">Construction Holdback</th>
+                        <th class="header-cell">Initial Funding</th>
+                        <th class="header-cell">Day 1 Interest</th>
+                        <th class="header-cell">LTAIV Percent</th>
+                        <th class="header-cell">LTAIV Amount</th>
+                        <th class="header-cell">LTC Percent</th>
+                        <th class="header-cell">LTC Amount</th>
+                        <th class="header-cell">LARV Percent</th>
+                        <th class="header-cell">LARV Amount</th>
+                        <th class="header-cell">Rehab Category</th>
+                        <th class="header-cell">Loan to As Value LTV</th>
+                        <th class="header-cell">Min Credit Score</th>
+                        <th class="header-cell">Commitment Deposit</th>
+                        <th class="header-cell">Cash to Close</th>
+                        <th class="header-cell">Construction Budget Percent</th>
+                        <th class="header-cell">Payment Reserves</th>
+                        <th class="header-cell">Budget Delta</th>
+                        <th class="header-cell">Total Liquidity</th>
+                        <th class="header-cell">Borrower Signature</th>
+                        <th class="header-cell">Borrower Name Signature</th>
+                        <th class="header-cell">Entity Name</th>
+                        <th class="header-cell">Date</th>
+                        <th class="header-cell">Guarantor Signature</th>
+                        <th class="header-cell">Guarantor Name</th>
+                        <th class="header-cell">Guarantor Date</th>
+                        <th class="header-cell">Advisor Name</th>
+                        <th class="header-cell">Advisor Email</th>
+                        <th class="header-cell">Advisor Phone</th>
+                        <th class="header-cell">Download Information</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los datos se llenarán dinámicamente solo si se selecciona un asesor -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <script src="./assets/js/getRegisterTable.js"></script>
+</body>
+
+</html>

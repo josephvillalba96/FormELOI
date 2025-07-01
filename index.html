@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reinvestar</title>
+    <script src="./assets/js/getDataform.js" async></script>
+    <script src="./assets/js/selectAdvisor.js" async></script>
+    <script src="./assets/js/calculate.js" async></script>
+  </head>
+
+  <body style="font-family: Arial, sans-serif; margin: 0; padding: 0">
+    <table cellpadding="0" cellspacing="0" border="0" style="width: 100%">
+      <tr>
+        <td align="center">
+          <!-- Contenedor principal -->
+          <table
+            cellpadding="0"
+            cellspacing="0"
+            border="0"
+            style="width: 1000px; max-width: 100%; font-size: 11px"
+          >
+            <!-- Header -->
+            <tr>
+              <td style="padding-right: 20px; width: 40%">
+                <img
+                  src="./assets/logo.png"
+                  alt="REINVESTAR Capital Group"
+                  style="width: 100%; max-width: 300px"
+                />
+              </td>
+              <td
+                style="
+                  background-color: #ffc55a;
+                  padding: 10px;
+                  border: 1px solid #000;
+                "
+              >
+                <table
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                  style="width: 100%"
+                >
+                  <tr>
+                    <td>
+                      <select id="advisor" style="background-color: #ffc55a" onchange="actualizarDatos()">
+                        <option value=""><strong>--</strong></option>
+                        <option value="2">
+                          <strong>Oscar Jr. Ladino</strong>
+                        </option>
+                        <option value="3">
+                          <strong>Carlos Hernandez</strong>
+                        </option>
+                        <option value="4">
+                          <strong>Felipe Delgado</strong>
+                        </option>
+                        <option value="5"><strong>Pedro Conesa</strong></option>
+                        <option value="6">
+                          <strong>Mohamed Heldosougi</strong>
+                        </option>
+                        <option value="7"><strong>Simone Costa</strong></option>
+                        <option value="8"><strong>Carlos Díaz</strong></option>
+                        <option value="9">
+                          <strong>Lilibhet Fuentes</strong>
+                        </option>
+                        <option value="10">
+                          <strong>Andriup Cohen</strong>
+                        </option>
+                        <option value="11">
+                          <strong>Stephanie Cruz</strong>
+                        </option>
+                        <option value="12">
+                          <strong>George Dillon</strong>
+                        </option>
+                        <option value="13">
+                          <strong>Andres Uribe</strong>
+                        </option>
+                        <option value="14">
+                          <strong>Viviana Puerta</strong>
+                        </option>
+                        <option value="15">
+                          <strong>Mariana Osorio</strong>
+                        </option>
+                        <option value="16">
+                          <strong>Carlos Betancourt</strong>
+                        </option>
+                        <option value="17"><strong>Julio Lopez</strong></option>
+                        <option value="18"><strong>Jaime Arias</strong></option>
+                        <option value="19">
+                          <strong>Paula Botero</strong>
+                        </option>
+                      </select>
+                      <input type="hidden" id="advisorId" name="advisorId" />
+                      <input type="hidden" id="advisorFullName" name="advisorFullName" />
+                      <input type="hidden" id="advisor_email" name="advisor_email" />
+                      <input type="hidden" id="advisor_phone" name="advisor_phone" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span id="phone"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a id="email"
+                        href="mailto:oljr@reinvestarcg.com"
+                        style="color: #000; text-decoration: none"
+                        ></a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="https://www.reinvestarcapitalgroup.com"
+                        style="color: #000; text-decoration: none"
+                        >WWW.REINVESTARCAPITALGROUP.COM</a
+                      >
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Espaciado -->
+            <tr>
+              <td colspan="2" style="height: 30px"></td>
+            </tr>
+
+            <!-- Título -->
+            <tr>
+              <td
+                colspan="2"
+                style="
+                  background-color: #ffc55a;
+                  text-align: center;
+                  font-weight: bold;
+                  font-size: 12px;
+                  padding: 12px;
+                  border: 1px solid #000;
+                "
+              >
+                LETTER OF INTENT FOR SHORT TERM LOAN
+              </td>
+            </tr>
+
+            <!-- Espaciado -->
+            <tr>
+              <td colspan="2" style="height: 25px"></td>
+            </tr>
+
+            <!-- Contenido Principal -->
+            <tr>
+              <!-- Columna izquierda -->
+              <td style="vertical-align: top; width: 50%; padding-right: 10px">
+                <!-- Borrower Info -->
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">BORROWER INFORMATION</td>
+                  </tr>
+                  <tr>
+                    <td>BORROWER INFORMATION</td>
+                    <td>
+                      <input
+                        type="text"
+                        id="borrower_information"
+                        value=""
+                        style="
+                          width: 100%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>LEGAL STATUS</td>
+                    <td>
+                      <select
+                        id="legal_status"
+                        style="
+                          width: 100%;
+                          border: none;
+                          background: transparent;
+                        "
+                      >
+                        <option selected value="CITIZEN">CITIZEN</option>
+                        <option value="RESIDENT">RESIDENT</option>
+                        <option value="OTHER">OTHER</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>ISSUED DATE</td>
+                    <td>
+                      <input
+                        id="issued_date"
+                        type="date"
+                        value=""
+                        style="
+                          width: 100%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>SUBJECT PROPERTY ADDRESS</td>
+                    <td>
+                      <input
+                        id="subject_property_address"
+                        type="text"
+                        value=""
+                        style="
+                          width: 100%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>ESTIMATED FICO SCORE</td>
+                    <td>
+                      <input
+                        id="fico"
+                        type="number"
+                        value=""
+                        style="
+                          width: 100%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Espacio -->
+                <div style="height: 20px"></div>
+
+                <!-- Loan Details -->
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">LOAN DETAILS</td>
+                  </tr>
+                  <tr>
+                    <td>LOAN TYPE</td>
+                    <td>
+                      <select
+                        id="loan_type"
+                        style="
+                          width: 100%;
+                          border: none;
+                          background: transparent;
+                        "
+                      >
+                        <option selected value="Ground Up Construction">Ground Up Construction</option>
+                        <option value="Fix & Flip">Fix & Flip</option>
+                        <option value="Purchase">Purchase</option>
+                        <option value="Refinance">Refinance</option>
+                        <option value="Cash-Out">Cash-Out</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>PROPERTY TYPE</td>
+                    <td>
+                      <select
+                        id="property_type"
+                        style="
+                          width: 100%;
+                          border: none;
+                          background: transparent;
+                        "
+                      >
+                        <option selected value="Single Family">Single Family</option>
+                        <option value="Multi-Family">Multi-Family</option>
+                        <option value="Commercial">Commercial</option>
+                        <option value="Mixed-Use">Mixed-Use</option>
+                        <option value="Land">Land</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>ESTIMATED CLOSING DATE</td>
+                    <td>
+                      <input
+                        id="estimated_closing_date"
+                        type="date"
+                        value=""
+                        style="
+                          width: 100%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>INTEREST RATE STRUCTURE</td>
+                    <td>
+                      <select
+                        id="interest_rate_structure"
+                        style="
+                          width: 100%;
+                          border: none;
+                          background: transparent;
+                        "
+                      >
+                        <option selected value="Interest Only">Interest Only</option>
+                        <option value="Amortizing">Amortizing</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>LOAN TERM</td>
+                    <td>
+                      <input
+                        id="loan_term"
+                        type="number"
+                        value=""
+                        style="
+                          width: 100%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                      months
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>PREPAYMENT PENALTY</td>
+                    <td>
+                      <select
+                        id="prepayment_penalty"
+                        style="
+                          width: 100%;
+                          border: none;
+                          background: transparent;
+                        "
+                      >
+                        <option selected value="Not Applicable">Not Applicable</option>
+                        <option value="Applicable">Applicable</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>MAXIMUM LTV</td>
+                    <td>
+                      <input
+                        id="max_ltv"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 100%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />%
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>MAXIMUM LTC</td>
+                    <td>
+                      <input
+                        id="max_ltc"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 100%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />%
+                    </td>
+                  </tr>
+                </table>
+                <!-- Espacio -->
+                <div style="height: 20px"></div>
+
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">TRANSACTION SUMMARY</td>
+                  </tr>
+                </table>
+
+                <!-- Espacio -->
+                <div style="height: 20px"></div>
+
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">PURCHASE, REFINANCE, CASH-OUT</td>
+                  </tr>
+                  <tr>
+                    <td>As-is Value</td>
+                    <td>
+                      <input
+                        id="asIsValue"
+                        type="number"
+                        style="
+                          width: 100%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Original Acquisition Price</td>
+                    <td>
+                      <input
+                        id="original_acquisition_price"
+                        type="number"
+                        style="
+                          width: 100%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Espacio -->
+                <div style="height: 20px"></div>
+
+                <!-- FIX & FLIP, GROUND UP CONSTRUCTION -->
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">FIX & FLIP, GROUND UP CONSTRUCTION</td>
+                  </tr>
+                  <tr>
+                    <td>Land or Acquisition Cost</td>
+                    <td>
+                      $<input
+                        id="acquisition_cost"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Financed Construction / Rehab Budget</td>
+                    <td>
+                      $<input
+                        id="financed_contruction_budget"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Total Cost</td>
+                    <td>
+                      $<input
+                        id="total_cost"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Estimated After Completion Value</td>
+                    <td>
+                      $<input
+                        id="estimated_after_completion_value"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Espacio -->
+                <div style="height: 20px"></div>
+
+                <!-- LOAN CLOSING COSTS -->
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">LOAN CLOSING COSTS</td>
+                  </tr>
+                  <tr>
+                    <td>Fee</td>
+                    <td>
+                      <input
+                        id="loan_closing_costs"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 50%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />%
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Origination Fee</td>
+                    <td>
+                      $<input
+                        id="origination_fee"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Underwriting Fee</td>
+                    <td>
+                      $<input
+                        id="underwriting_fee"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Processing Fee</td>
+                    <td>
+                      $<input
+                        id="processing_fee"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Servicing Fee</td>
+                    <td>
+                      $<input
+                        id="servicing_fee"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Legal Fee</td>
+                    <td>
+                      $<input
+                        id="legal_fee"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Appraisal Fee</td>
+                    <td>
+                      <select
+                        id="appraisal_fee"
+                        style="
+                          width: 100%;
+                          border: none;
+                          background: transparent;
+                        "
+                      >
+                        <option selected value="TBD">TBD</option>
+                        <option value="Fixed">Fixed</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Budget review and Permit Validation report</td>
+                    <td>
+                      $<input
+                        id="budget_review_validation"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Espacio -->
+                <div style="height: 20px"></div>
+
+                <!-- OTHER EXPENSES (Estimated)	 -->
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">OTHER EXPENSES (Estimated)</td>
+                  </tr>
+                  <tr>
+                    <td>Fee</td>
+                    <td>
+                      <input
+                        id="other_fee"
+                        type="number"
+                        value=""
+                        step=""
+                        style="
+                          width: 50%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />%
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Broker Fee</td>
+                    <td>
+                      $<input
+                        id="broker_fee"
+                        type="number"
+                        value=""
+                        step=""
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Transaction Fee</td>
+                    <td>
+                      $<input
+                        id="transaction_fee"
+                        type="number"
+                        value=""
+                        step=""
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Espacio -->
+                <div style="height: 20px"></div>
+
+                <!-- OTHER EXPENSES (Estimated)	 -->
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #000;
+                      font-weight: bold;
+                      text-align: start;
+                    "
+                  >
+                    <td style="color: #fff; width: 70%">
+                      All terms subject to confirmation including but
+                    </td>
+                  </tr>
+                  <!-- Espaciado -->
+                  <tr>
+                    <td style="height: 20px"></td>
+                    <td style="height: 20px"></td>
+                  </tr>
+                  <tr>
+                    <td style="height: 20px"></td>
+                    <td style="height: 20px"></td>
+                  </tr>
+                  <tr>
+                    <td style="height: 20px"></td>
+                    <td style="height: 20px"></td>
+                  </tr>
+                </table>
+
+                <!-- Espacio -->
+                <div style="height: 20px"></div>
+
+                <!-- OTHER EXPENSES (Estimated)	 -->
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="0"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td>BORROWER SIGNATURE:</td>
+                    <td>___________________________</td>
+                  </tr>
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td>BORROWER NAME:</td>
+                    <td>___________________________</td>
+                  </tr>
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td>ENTITY NAME:</td>
+                    <td>___________________________</td>
+                  </tr>
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td>DATE:</td>
+                    <td>___________________________</td>
+                  </tr>
+                </table>
+              </td>
+
+              <!-- Columna derecha -->
+              <td style="vertical-align: top; width: 50%; padding-left: 10px">
+                <!-- Loan Summary -->
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">LOAN SUMMARY</td>
+                  </tr>
+                  <tr>
+                    <td>TOTAL LOAN AMOUNT</td>
+                    <td>
+                      $<input
+                        id="total_loan_amount"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>ANNUAL INTEREST RATE</td>
+                    <td>
+                      <input
+                        id="annual_interest_rate"
+                        type="number"
+                        value=""
+                        step="0.001"
+                        style="
+                          width: 50%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />%
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>REQUESTED LEVERAGE</td>
+                    <td>
+                      <input
+                        id="request_leverage"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 50%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />%
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>APPROX. MONTHLY INTEREST PAYMENT</td>
+                    <td>
+                      $<input
+                        id="monthly_interest_payment"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">
+                      IF LOAN IS FIX & FLIP OR GROUND UP CONSTRUCTION
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>CONSTRUCTION HOLDBACK</td>
+                    <td>
+                      $<input
+                        id="contruction_holdback"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>INITIAL FUNDING</td>
+                    <td>
+                      $<input
+                        id="initial_funding"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>DAY 1 APPROX. MONTHLY INTEREST PAYMENT</td>
+                    <td>
+                      $<input
+                        id="monthly_interest_1_payment"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                </table>
+                <!-- Espacio -->
+                <div style="height: 15px"></div>
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">LOAN METRICS</td>
+                  </tr>
+                </table>
+                <!-- Espacio -->
+                <div style="height: 15px"></div>
+
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">PURCHASE, REFINANCE, CASH-OUT</td>
+                  </tr>
+                  <tr>
+                    <td>Loan to As-is Value (LTV)</td>
+                    <td>
+                      <select
+                        id="loan_to_asIs_value"
+                        style="
+                          width: 100%;
+                          border: none;
+                          background: transparent;
+                        "
+                      >
+                        <option selected value="NOT APPLICABLE">NOT APPLICABLE</option>
+                        <option value="APPLICABLE">APPLICABLE</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="height: 10px"></td>
+                    <td style="height: 10px"></td>
+                  </tr>
+                </table>
+                <!-- Espacio -->
+                <div style="height: 15px"></div>
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">FIX & FLIP, GROUND UP CONSTRUCTION</td>
+                  </tr>
+                  <tr>
+                    <td>Loan to As-Is Value (LTAIV) %</td>
+                    <td>
+                      <input
+                        id="loan_to_asIs_value_percent"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 50%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />%
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Loan to As-Is Value (LTAIV) $</td>
+                    <td>
+                      $<input
+                        id="loan_to_asIs_value_amount"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Loan to Cost (LTC) %</td>
+                    <td>
+                      <input
+                        id="loan_to_cost_percent"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 50%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />%
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Loan to Cost (LTC) $</td>
+                    <td>
+                      $<input
+                        id="loan_to_cost_amount"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Loan to ARV (Maximum 75%) %</td>
+                    <td>
+                      <input
+                        id="loan_to_arv_percent"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 50%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />%
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Loan to ARV (Maximum 75%) $</td>
+                    <td>
+                      $<input
+                        id="loan_to_arv_amount"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Rehab Category</td>
+                    <td>
+                      <select
+                        id="rehab_category"
+                        style="
+                          width: 100%;
+                          border: none;
+                          background: transparent;
+                        "
+                      >
+                        <option selected value="Ground Up">Ground Up</option>
+                        <option value="Light Rehab">Light Rehab</option>
+                        <option value="Medium Rehab">Medium Rehab</option>
+                        <option value="Heavy Rehab">Heavy Rehab</option>
+                      </select>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Espacio -->
+                <div style="height: 15px"></div>
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">CONDITIONS AND ADDITIONAL INFORMATION</td>
+                  </tr>
+                  <tr style="font-weight: normal; text-align: center">
+                    <td colspan="2">FOR SHORT TERM LOANS:</td>
+                  </tr>
+                  <tr>
+                    <td>1) Minimum Credit Score required</td>
+                    <td>
+                      <input
+                        id="minimum_credit_score"
+                        type="number"
+                        value=""
+                        style="
+                          width: 100%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2) Commitment deposit</td>
+                    <td>
+                      $<input
+                        id="commitment_deposit"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      (required to initiate loan processing and order of
+                      appraisal)
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr style="text-align: start; height: 30px">
+                    <td colspan="2">
+                      <span style="font-weight: 800">If Loan doesn't close</span
+                      >, a statement of expenses will be produced, and only the
+                      remaining balance will be returned.
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Espacio -->
+                <div style="height: 15px"></div>
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="1"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td colspan="2">
+                      MINIMUM BORROWER'S LIQUIDITY REQUIRED (Estimated)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Cash to close (Down payment + closing costs)</td>
+                    <td>
+                      <input
+                        id="cash_to_close"
+                        type="number"
+                        value=""
+                        style="
+                          width: 100%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>10% of Construction Budget</td>
+                    <td>
+                      $<input
+                        id="ten_percent_of_construction_budget"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>6 months payment reserves</td>
+                    <td>
+                      $<input
+                        id="six_months_payment_reserves"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Construction budget delta</td>
+                    <td>
+                      $<input
+                        id="constructio_budget_delta"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Total</td>
+                    <td>
+                      $<input
+                        id="total_liquidity"
+                        type="number"
+                        value=""
+                        step="0.01"
+                        style="
+                          width: 80%;
+                          border: none;
+                          background: transparent;
+                        "
+                      />
+                    </td>
+                  </tr>
+                </table>
+
+                <div style="height: 285px"></div>
+                <table
+                  cellpadding="5"
+                  cellspacing="0"
+                  border="0"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td>GUARANTOR SIGNATURE:</td>
+                    <td>___________________________</td>
+                  </tr>
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td>GUARANTOR NAME:</td>
+                    <td>___________________________</td>
+                  </tr>
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td>DATE:</td>
+                    <td>___________________________</td>
+                  </tr>
+                  <tr
+                    style="
+                      background-color: #ffc55a;
+                      font-weight: bold;
+                      text-align: center;
+                    "
+                  >
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- Título -->
+            <tr>
+              <td colspan="2" style="height: 25px"></td>
+            </tr>
+
+            <tr>
+              <td
+                colspan="2"
+                style="
+                  background-color: #000;
+                  text-align: center;
+                  font-weight: bold;
+                  font-size: 12px;
+                  padding: 12px;
+                  border: 1px solid #000;
+                "
+              >
+                <p style="color: #fff; margin: 0">
+                  "PLEASE EXECUTE THIS LETTER OF INTENT AND RETURN TO REINVESTAR
+                  CAPITAL GROUP SHOULD YOU WISH TO PROCEED Offer will expire
+                  within five (5) business days of the issued date."
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Agregué este botón al final del formulario -->
+    <div style="text-align: center; margin: 20px">
+      <button
+        onclick="captureFormData()"
+        style="
+          background-color: #ffc55a;
+          border: 1px solid #000;
+          padding: 10px 20px;
+          font-weight: bold;
+          cursor: pointer;
+        "
+      >
+        Submit
+      </button>
+      <a
+        href="registertable.html"
+        style="
+          background-color: #ffc55a;
+          border: 1px solid #000;
+          padding: 10px 20px;
+          font-weight: bold;
+          cursor: pointer;
+          color: #000;
+        "
+      >
+        Consult Request
+      </a>
+    </div>
+    <div style="text-align: center; margin: 20px"></div>
+  </body>
+</html>
