@@ -1,0 +1,20 @@
+# Configuración para evitar cacheo de archivos JavaScript
+<FilesMatch "\.(js)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+</FilesMatch>
+
+# Configuración adicional para archivos específicos
+<FilesMatch "(getDataform|selectAdvisor|calculate|getRegisterTable)\.js$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+</FilesMatch>
+
+# Configuración para archivos CSS (opcional)
+<FilesMatch "\.(css)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+</FilesMatch> 
