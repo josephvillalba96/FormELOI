@@ -95,7 +95,7 @@ function captureFormData() {
   alert("Datos capturados. Revisa la consola para ver el objeto completo.");
 
   // Aquí podrías enviar los datos a un servidor
-  fetch('http://localhost:5002/api/solicitudes', {
+  fetch('http://api.reinvestarapp.com/api/solicitudes', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

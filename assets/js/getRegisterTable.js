@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
       tbody.innerHTML = '';
       return;
     }
-    let url = 'http://localhost:5002/api/solicitudes?id=' + advisorId;
+    let url = 'http://api.reinvestarapp.com/api/solicitudes?id=' + advisorId;
     fetch(url)
       .then(res => res.json())
       .then(data => {
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function descargarPorId(solicitudId) {
-  fetch(`http://localhost:5002/api/solicitudes/descargar/${solicitudId}`)
+  fetch(`http://api.reinvestarapp.com/api/solicitudes/descargar/${solicitudId}`)
     .then(response => {
       if (!response.ok) throw new Error('Error al descargar el archivo');
       return response.blob();
@@ -114,7 +114,7 @@ function descargarPorId(solicitudId) {
 }
 
 function exportarExcel() {
-  const url = `http://localhost:5002/api/solicitudes/descargar-excel`;
+  const url = `http://api.reinvestarapp.com/api/solicitudes/descargar-excel`;
 
   fetch(url)
     .then(response => {
