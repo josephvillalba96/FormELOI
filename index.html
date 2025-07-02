@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reinvestar</title>
-    <script src="./assets/js/loadScripts.js"></script>
+    <script src="./assets/js/getDataform.js?v=20241201"></script>
+    <script src="./assets/js/selectAdvisor.js?v=20241201"></script>
+    <script src="./assets/js/calculate.js?v=20241201"></script>
   </head>
 
   <body style="font-family: Arial, sans-serif; margin: 0; padding: 0">
@@ -42,7 +44,7 @@
                 >
                   <tr>
                     <td>
-                      <select id="advisor" style="background-color: #ffc55a">
+                      <select id="advisor" style="background-color: #ffc55a" onchange="actualizarDatos()">
                         <option value=""><strong>--</strong></option>
                         <option value="2">
                           <strong>Oscar Jr. Ladino</strong>
@@ -1441,7 +1443,7 @@
     <!-- Agregué este botón al final del formulario -->
     <div style="text-align: center; margin: 20px">
       <button
-        id="submitButton"
+        onclick="captureFormData()"
         style="
           background-color: #ffc55a;
           border: 1px solid #000;
