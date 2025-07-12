@@ -1,6 +1,8 @@
 const datos = {
   1: { correo: "ol@reinvestarcg.com", telefono: "1 (201) 410-6098" },
+
   2: { correo: "oljr@reinvestarcg.com", telefono: "1 (201) 560-6938" },
+  
   3: { correo: "ch@reinvestarcg.com", telefono: "1 (201) 554-3430" },
   4: { correo: "fd@reinvestarcg.com", telefono: "1 (407) 690-9635" },
   5: { correo: "pc@reinvestarcg.com", telefono: "1 (407) 242-2629" },
